@@ -1,0 +1,150 @@
+.aside {
+  @include e('block') {
+    @include flexbox(flex, column, wrap, flex-start, center, flex-start);
+    @extend %box-sizing;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+    
+    @include e('title') {
+      @include e('text') {
+        @extend %box-sizing;
+        padding: 10px 0px 0px 20px;
+      }
+      @include flexbox(flex, column, wrap, center, flex-start, flex-start);
+      @include fonte($special-font, normal, 34px, #000);
+      @extend %box-sizing;
+      background-image: url('./img/bg-aside-title.png');
+      background-color: #FFF;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: top right;
+      width: 100%;
+      padding: 4px;
+      text-align: left;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+      
+
+    }
+
+
+    @include e('cont') {
+      width: 100%;
+      background-color: #f1f1f1;
+      @include e('photo') {
+        @include border-radius(50%);
+        @include box-shadow(-1px, 2px, 6px, #6b6b6b);
+        height: auto;
+        max-width: 150px;
+        border: 5px solid #dedede;
+        margin-top: 10px;
+      }
+      @include e('text') {
+        @extend %box-sizing;
+        width: 100%;
+        display: block;
+        padding: 20px 45px;
+        text-align: center;
+      }
+
+      @include e('contact') {
+        @include flexbox(flex, row, wrap, center, center, center);
+        margin-bottom: 20px;
+        @include e('icon') {
+          color: $color-primary-dark;
+          margin-right: 10px;
+        }
+        @include e('mail') {
+          font-size: 14px;
+          color: $color-primary-dark;
+        }
+      }
+
+      @include e('youtube') {
+        @extend %box-sizing;
+        @include transition(null, .5s, null);
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+
+        &:before{
+          @include set-icon($fa-var-youtube, 0px, 900, $youtube_color, "brand");
+          @include opacity(0);
+          @include transition(null, .5s, null);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+
+        &:hover{
+           &:before{
+            @include opacity(1);
+            font-size: 45px;
+          }
+          .aside__block__cont__youtube__img{
+            @include opacity(.5);
+            border: 15px solid #6b6b6b;
+          }
+        }
+       
+        @include e('img') {
+          @extend %box-sizing;
+          @include transition(null, .5s, null);
+          width: 100%;
+          height: auto;
+        }
+
+      }
+
+      @include e('form') {
+        @extend %box-sizing;
+        padding: 10px;
+        > input,
+        > textarea{
+          @extend %box-sizing;
+          @include fonte($system-font, normal, 14px, #000);
+          margin: 10px 0px; 
+          width: 100%;
+          padding: 15px;
+          border: 0px;
+          background-color: #dadada;
+        }
+
+        @include e('submit') {
+          @include flexbox(flex, row, wrap, center, center, center);
+          @include fonte($system-font, normal, 14px, #FFF);
+          @include box-sizing;
+          @include remove-shadow;
+          @include transition;
+          background-color: #3a3a3a;
+          padding: 10px;
+          width: 100%;
+          border: 0px;
+          cursor: pointer;
+          &:before{
+            @include set-icon($fa-var-envelope, 20px, 900, #FFF);
+            @include transition;
+            margin-right: 10px;
+          }
+          &:hover{
+            &:before{
+              color: #6b6b6b;
+            }
+            background-color: $color-secondary-default;
+            color: #6b6b6b;
+          }
+        }
+      }
+    }
+  }
+}

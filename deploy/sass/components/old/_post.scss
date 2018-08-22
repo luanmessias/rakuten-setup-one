@@ -1,0 +1,176 @@
+.post {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    background-color: #FFF;
+    @include e('header') {
+        text-align: center;
+        @include e('img') {
+            width: 100%;
+            height: auto;
+        }
+        @include e('info') {
+            margin-top: 20px;
+            @include e('category') {
+                @include fonte($system-font, normal, 14px, $color-primary-default);
+                @include transition;
+                text-transform: uppercase;
+                @extend %box-sizing;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+        @include e('title') {
+            @include fonte($system-font, normal, 28px, #000);
+            @include transition;
+            font-style: italic;
+            text-transform: uppercase;
+            @extend %box-sizing;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            margin: 0px;
+        }
+        @include e('date') {
+            @include fonte($system-font, normal, 12px, #9c9c9c);
+            @include transition;
+            @extend %box-sizing;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+    @include e('content') {
+        @include box-sizing;
+        width: 100%;
+        padding: 25px;
+    }
+    @include e('share') {
+        @include flexbox(flex, row, nowrap, flex-end, center, center);
+        @include box-sizing;
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid #CCC;
+        @include e('desc') {
+            @include fonte($system-font, normal, 12px, #9c9c9c);
+        }
+        @include e('link') {
+            @include transition(null, .2s, null);
+            font-size: 28px;
+            color: $color-secondary-dark;
+            margin-left: 15px;
+            >i {
+                @include transition(null, .2s, null);
+            }
+            &:hover {
+                .fa-facebook-square {
+                    color: $facebook_color;
+                }
+                .fa-twitter-square {
+                    color: $twitter_color;
+                }
+                .fa-pinterest-square {
+                    color: $pinterest_color;
+                }
+                .fa-google-plus-square {
+                    color: $youtube_color;
+                }
+            }
+        }
+    }
+    @include e('author') {
+        @include flexbox(flex, row, nowrap, flex-start, center, center);
+
+        @media #{$res-xs-sm} {
+            @include flexbox(flex, column, nowrap, flex-start, center, center);
+        }
+
+        @include box-sizing;
+        width: 100%;
+        padding: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        background-color: #FFF;
+        margin: 20px 0px;
+        @include e('photo') {
+            @include border-radius(50%);
+            height: auto;
+            max-width: 120px;
+            margin-top: 10px;
+        }
+        @include e('info') {
+            margin-left: 20px;
+            @media #{$res-xs-sm} {
+                text-align: center;
+                margin-top: 20px;
+                margin-left: 0px;
+            }
+
+            @include e('name') {
+                @include fonte($system-font, bold, 16px, #000);
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 10px;
+            }
+            @include e('desc') {
+                @include fonte($system-font, normal, 14px, #000);
+                display: block;
+                margin-bottom: 10px;
+            }
+            @include e('social') {
+                @include flexbox(flex, row, wrap, flex-start, center, center);
+                @media #{$res-xs-sm} {
+                    @include flexbox(flex, row, wrap, center, center, center);
+                }
+                @include transition;
+                @extend %box-sizing;
+                padding: 10px;
+                width: auto;
+                @include e('link'){
+                    @include transition(null, .2s, null);
+                    font-size: 24px;
+                    color: $color-secondary-dark;
+                    margin-left: 15px;
+                    @include m('facebook') {
+                      margin-left: 0px;
+                    }
+                    > i{
+                        @include transition(null, .2s, null);
+                    }
+                    &:hover{
+                        .fa-facebook{
+                            color: $facebook_color;
+                        }
+                        .fa-twitter{
+                            color: $twitter_color;
+                        }
+                        .fa-instagram{
+                            color: $instagram_color;
+                        }
+                        .fa-pinterest{
+                            color: $pinterest_color;
+                        }
+                        .fa-youtube{
+                            color: $youtube_color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include e('disqus') {
+        @include box-sizing;
+        width: 100%;
+        padding: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        background-color: #FFF;
+    }
+}

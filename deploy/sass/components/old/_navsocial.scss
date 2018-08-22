@@ -1,0 +1,40 @@
+.socialbar{
+    @include transition;
+    @include flexbox(flex, row, wrap, space-between, center, center);
+    @extend %box-sizing;
+    padding: 10px;
+    width: auto;
+    
+    @include e('link'){
+        @include transition(null, .2s, null);
+        font-size: 24px;
+        color: $color-secondary-dark;
+        margin-left: 15px;
+        @include m('facebook') {
+          margin-left: 0px;
+        }
+        > i{
+            @include transition(null, .2s, null);
+        }
+        &:hover{
+            .fa-facebook{
+                color: $facebook_color;
+            }
+            .fa-twitter{
+                color: $twitter_color;
+            }
+            .fa-instagram{
+                color: $instagram_color;
+            }
+            .fa-pinterest{
+                color: $pinterest_color;
+            }
+            .fa-youtube{
+                color: $youtube_color;
+            }
+        }
+    }
+}
+
+
+    

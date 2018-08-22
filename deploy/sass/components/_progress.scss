@@ -1,0 +1,103 @@
+.progress{
+    @include flexbox(row, nowrap, space-between, center, center);
+    padding: 0px;
+    @include e('item'){
+        @include flexbox(column, nowrap, space-between, center, center);
+        list-style: none;
+
+        @include e('icon'){
+            background-image: url('../img/progress.png');
+            background-repeat: no-repeat;
+            display: block;
+            width: 51px;
+            height: 51px;
+        }
+
+        @include e('text'){
+            @include fonte($second-font, bold, 14px, #3e3e3e);
+        }
+
+        &.active + .progress__line{
+            background-color: #089b00;
+        }
+
+
+        @include m('register'){
+            @include animate(fadeInLeft, .4s);
+            & > .progress__item__icon{
+                background-position: -4px -9px;
+            }
+            &.active {
+                & > .progress__item__icon{
+                    background-position: -4px -69px;
+                }
+                & > .progress__item__text{
+                    color: #089b00;
+                } 
+            }
+        }
+        @include m('layout'){
+            @include animate(fadeInLeft, .6s);
+            & > .progress__item__icon{
+                background-position: -90px -9px;
+            }
+            &.active {
+                & > .progress__item__icon{
+                    background-position: -90px -69px;
+                }
+                & > .progress__item__text{
+                    color: #089b00;
+                } 
+            }
+        }
+        @include m('domain'){
+            @include animate(fadeInLeft, .8s);
+            & > .progress__item__icon{
+                background-position: -167px -9px;
+            }
+            &.active {
+                & > .progress__item__icon{
+                    background-position: -167px -69px;
+                }
+                & > .progress__item__text{
+                    color: #089b00;
+                } 
+            }
+        }
+        @include m('bank'){
+            @include animate(fadeInLeft, 1s);
+            & > .progress__item__icon{
+                background-position: -243px -9px;
+            }
+            &.active {
+                & > .progress__item__icon{
+                    background-position: -243px -69px;
+                }
+                & > .progress__item__text{
+                    color: #089b00;
+                } 
+            }
+        }
+        @include m('payment'){
+            @include animate(fadeInLeft, 1.2s);
+            & > .progress__item__icon{
+                background-position: -315px -9px;
+            }
+            &.active {
+                & > .progress__item__icon{
+                    background-position: -315px -69px;
+                }
+                & > .progress__item__text{
+                    color: #089b00;
+                }
+            }
+        }
+    }
+    @include e('line'){
+        @include animate(fadeIn, 1.4s);
+        list-style: none;
+        width: calc(100% / 7);
+        height: 1px;
+        background-color: #3e3e3e;
+    }
+}

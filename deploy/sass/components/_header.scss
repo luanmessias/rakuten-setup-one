@@ -1,0 +1,58 @@
+.header{
+    width: 100%;
+    background-color: #FFF;
+    @extend .animated;
+    @extend .fadeInDown;
+   
+
+    @media #{$res-sm-xl} {
+        height: 77px;
+        @include flexbox(row, wrap, center, center, center);
+        .wrapper{
+            @include flexbox(row, wrap, space-between, center, center);
+        } 
+    }
+
+    @include e('col'){
+        @include flexbox(row, wrap, flex-start, center, center);
+        @include m('last'){
+            @include flexbox(row, wrap, flex-end, center, center);
+        }
+    }
+
+    @include e('logo'){
+        @include flexbox(row, wrap, flex-end, center, center);
+        
+    }
+
+    @include e('description'){
+        @include flexbox(row, wrap, flex-end, center, center);
+        @include fonte($second-font, bold, 16px, #000);
+
+        &:before{
+            content: "";
+            width: 1px;
+            height: 35px;
+            background-color: #CCC;
+            margin: 0px 25px;
+        }
+
+    }
+
+
+    @include e('info'){
+        @include flexbox(row, wrap, flex-start, center, center);
+        @include fonte($second-font, normal, 14px, #737373);
+        margin-left: 20px;
+        @include e('icon'){
+            color: #737373;
+            margin-right: 5px;
+            font-size: 24px;
+            &.fa-envelope{
+                font-weight: 400;
+            }
+        }
+    }
+    
+
+}

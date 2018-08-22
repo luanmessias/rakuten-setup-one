@@ -1,0 +1,109 @@
+.postcard {
+  @include flexbox(flex, column, wrap, flex-start, center, flex-start);
+  @include order(2);
+  @include transition;
+
+  @include e('ftlink') {
+    @include e('image') {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include e('categories') {
+    @include fonte($system-font, normal, 14px, $color-primary-dark);
+    @include transition;
+    text-transform: uppercase;
+    @extend %box-sizing;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    &:hover {
+      color: #000;
+    }
+  }
+
+  @include e('title') {
+    @include fonte($system-font, normal, 18px, #000);
+    @include transition;
+    font-style: italic;
+    text-transform: uppercase;
+    @extend %box-sizing;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    &:hover {
+      color: $color-primary-default;
+    }
+  }
+
+  @include e('date') {
+    @include fonte($system-font, normal, 13px, #494949);
+    @include transition;
+    @extend %box-sizing;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    padding-top: 5px;
+    &:hover{
+      color: $color-primary-default;
+    }
+  }
+
+  @include e('resume') {
+    @include fonte($system-font, normal, 14px, rgb(121, 121, 121));
+    @include transition;
+    @extend %box-sizing;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+  }
+
+  @include e('link') {
+    @include fonte($system-font, normal, 12px, #000);
+    @include transition;
+    @extend %box-sizing;
+    text-transform: uppercase;
+    width: auto;
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: 1px solid $color-primary-dark;
+    &:hover{
+      background-color: $color-primary-dark;
+      color: #FFF;
+    }
+  }
+
+  @media #{$res-xs} {
+    width: 100%;
+  }
+
+  @media #{$res-sm} {
+    width: 100%;
+  }
+
+  @media #{$res-md} {
+    width: calc(50% - 15px);
+  }
+
+  @media #{$res-lg} {
+    width: calc(50% - 15px);
+  }
+
+  @media #{$res-xl} {
+    width: calc(50% - 15px);
+  }
+
+  background-color: #FFF;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+  @include m('master') {
+    @include order(1);
+    width: 100%;
+  }
+
+}

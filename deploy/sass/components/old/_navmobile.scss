@@ -1,0 +1,128 @@
+.navmob {
+    z-index: 11;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    @include e('check') {
+        display: none;
+    }
+    @media #{$res-md} {
+        display: none;
+    }
+    @media #{$res-lg} {
+        display: none;
+    }
+    @media #{$res-xl} {
+        display: none;
+    }
+    input:checked~label .navmob__button {
+        box-shadow: 0 0 0 105vw #FFF, 0 0 0 120vh #dedede;
+        @media #{$res-sm} {
+            box-shadow: 0 0 0 160vw #FFF, 0 0 0 120vh #dedede;
+        }
+        @include rotate(45);
+        .navmob__button__hamburguer {
+            &:before,
+            &:after {
+                @include rotate(90);
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+    input:checked~.navmob__container {
+        @include opacity(1);
+        visibility: visible;
+        position: fixed;
+    }
+    @include e('button') {
+        @include flexbox(flex, column, wrap, center, center, center);
+        @include border-radius(50%);
+        -webkit-tap-highlight-color: transparent;
+        box-shadow: 0 0 0 0px #46a4b1, 0 0 0 0px #46a4b1;
+        transition: all .8s cubic-bezier(.19, 1, .22, 1);
+        background-color: #46a4b1;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        cursor: pointer;
+        @include e('hamburguer') {
+            position: relative;
+            &,
+            &:before,
+            &:after {
+                @include transition;
+                display: block;
+                background-color: #FFF;
+                width: 25px;
+                height: 3px;
+            }
+            &:before,
+            &:after {
+                position: absolute;
+                content: "";
+            }
+            &:before {
+                top: -8px;
+            }
+            &:after {
+                bottom: -8px;
+            }
+        }
+    }
+    @include e('container') {
+        @include flexbox(flex, column, wrap, space-around, center, flex-start);
+        @include opacity(0);
+        @extend %box-sizing;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: calc(100% - 100px);
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        transition: all .20s 0s cubic-bezier(0, 1.07, 0, 1.02);
+        z-index: 2;
+        @include e('logo') {
+            @include e('link') {
+                height: auto;
+                max-width: 250px;
+                @include e('img') {
+                    @include m('profile') {
+                        height: auto;
+                        max-width: 150px;
+                        @include border-radius(50%);
+                        @include box-shadow(-1px, 2px, 6px, #6b6b6b);
+                        border: 5px solid #dedede;
+                    }
+                }
+            }
+        }
+        @include e('nav') {
+            @include flexbox(flex, row, wrap, center, center, flex-start);
+            @include e('item') {
+                text-align: right;
+                padding: 10px;
+                @include e('link') {
+                    color: rgb(83, 83, 83);
+                    font-size: 20px;
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        @include e('socialbar') {
+            @include e('link') {
+                margin: 10px;
+                font-size: 30px;
+                color: rgb(83, 83, 83);
+            }
+        }
+       
+    }
+}
