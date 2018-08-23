@@ -1,6 +1,6 @@
 .progress{
     @include flexbox(row, nowrap, space-between, center, center);
-    padding: 0px;
+    padding: 20px 0px;
     @include e('item'){
         @include flexbox(column, nowrap, space-between, center, center);
         list-style: none;
@@ -15,10 +15,6 @@
 
         @include e('text'){
             @include fonte($second-font, bold, 14px, #3e3e3e);
-        }
-
-        &.active + .progress__line{
-            background-color: #089b00;
         }
 
 
@@ -36,6 +32,7 @@
                 } 
             }
         }
+        
         @include m('layout'){
             @include animate(fadeInLeft, .6s);
             & > .progress__item__icon{
@@ -99,5 +96,9 @@
         width: calc(100% / 7);
         height: 1px;
         background-color: #3e3e3e;
+        &.active{
+            background-color: #089b00;
+            height: 2px;
+        }
     }
 }

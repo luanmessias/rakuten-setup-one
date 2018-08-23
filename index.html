@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Setup - Rakuten One</title>
     <link rel="stylesheet" href="dist/css/main.css">
-
+    <script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
 </head>
 <body>
 
@@ -39,34 +39,56 @@
     </header>
     
     <div class="wrapper">
+
         <ul class="progress">
             <li class="progress__item progress__item--register active">
                 <i class="progress__item__icon"></i>
                 <span class="progress__item__text">Cadastro</span>
             </li>
-            <li class="progress__line"></li>
+            <li class="progress__line progress__line--layout"></li>
             <li class="progress__item progress__item--layout">
                 <i class="progress__item__icon"></i>
                 <span class="progress__item__text">Layout</span>
             </li>
-            <li class="progress__line"></li>
+            <li class="progress__line progress__line--domain"></li>
             <li class="progress__item progress__item--domain">
                 <i class="progress__item__icon"></i>
                 <span class="progress__item__text">Domínio</span>
             </li>
-            <li class="progress__line"></li>
+            <li class="progress__line progress__line--bank"></li>
             <li class="progress__item progress__item--bank">
                 <i class="progress__item__icon"></i>
                 <span class="progress__item__text">Dados Bancários</span>
             </li>
-            <li class="progress__line"></li>
+            <li class="progress__line progress__line--payment"></li>
             <li class="progress__item progress__item--payment">
                 <i class="progress__item__icon"></i>
                 <span class="progress__item__text">Pagamento</span>
             </li>
         </ul>
+
+        <main class="form">
+            <h1 class="title">Dados Gerais</h1>
+            <form>
+                <div class="form__group">
+                    <div class="form__block grid grid__xl--2">
+                        <label for="CNPJ" class="form__block__label">CNPJ</label>
+                        <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true" data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$" data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
+                    </div>
+                    <div class="form__block grid grid__xl--2">
+                        <label for="Email" class="form__block__label">E-Mail</label>
+                        <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido" data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
+                    </div>
+                    <div class="form__block grid grid__xl--2">
+                        <div class="g-recaptcha" data-sitekey="6LcA0msUAAAAAB5_ocKQ9f3wpuEg8vHBHOazuUM_"></div>
+                    </div>
+                </div>
+                <button class="form__confirm">Validar</button>
+            </form>
+        </main>
+
     </div>
    
-
+    
 </body>
 </html>

@@ -353,3 +353,16 @@ $y) {
   -webkit-animation-delay: $delay;
   animation-delay: $delay;
 }
+
+@mixin createGrid($prefix, $mediaquery) {
+
+  @media #{$mediaquery} {
+    @for $i from 1 through 12 {
+        @include e("#{$prefix}--#{$i}") {
+            $part: round(100 / 12);
+            width: calc(100% / #{$i});
+        }
+    }
+  }
+  
+}

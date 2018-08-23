@@ -60,9 +60,10 @@ $res-300: "(max-width: 300px)";
 $res-350: "(max-width: 350px)";
 $res-400: "(max-width: 400px)";
 $res-xs-sm: "(max-width: 767px)";
+$res-sm-xl: "(min-width: 768px)";
+
 $res-xs: "(max-width: 575px)";
 $res-sm: "(min-width: 576px) and (max-width: 767px)";
 $res-md: "(min-width: 768px) and (max-width: 991px)";
 $res-lg: "(min-width: 992px) and (max-width: 1199px)";
 $res-xl: "(min-width: 1200px)";
-$res-sm-xl: "(min-width: 768px)";

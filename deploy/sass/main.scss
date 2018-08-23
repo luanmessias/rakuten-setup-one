@@ -24,11 +24,14 @@
 @import 'objects/fontawesome';
 @import 'objects/animate';
 @import 'objects/wrapper';
+@import 'objects/grid';
 
 //COMPONENTS - All specifc stye for objects goes here.
 //======================================
 @import 'components/header';
 @import 'components/progress';
+@import 'components/forms';
+@import 'components/titles';
 
 
 //TRUMPS - Layer to add !important elements like a .hidden classs

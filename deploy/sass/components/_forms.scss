@@ -1,0 +1,31 @@
+.form{
+    @include animate(fadeIn, 1.4s);
+    @include box-sizing;
+    background-color: #FFF;
+    padding: 25px;
+    width: 100%;
+    height: auto;
+
+    @include e('group'){
+        @include flexbox(row, wrap, space-between, flex-end, center);
+        padding: 20px 0px;
+    }
+
+    @include e('block'){
+        @include e('label'){
+            @include fonte($second-font, bold, 14px, #212129);
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        @include e('control'){
+            @include box-sizing;
+            @include box-shadow(1px, 1px, 1px, #c1c2c2, inset);
+            @include border-radius(2px);
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #f1f2f2;
+            border: 0px;
+        }
+    }
+}
