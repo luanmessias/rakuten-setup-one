@@ -38,7 +38,7 @@
         </div>
     </header>
     
-    <div class="wrapper">
+    <div class="wrapper first" >
 
         <ul class="progress">
             <li class="progress__item progress__item--register active">
@@ -67,28 +67,48 @@
             </li>
         </ul>
 
-        <main class="form">
+        <main class="form first">
             <h1 class="title">Dados Gerais</h1>
             <form>
                 <div class="form__group">
-                    <div class="form__block grid grid__xl--2">
+                    <div class="form__block grid xl_4 lg_4 md_6 sm_12 xs_12">
                         <label for="CNPJ" class="form__block__label">CNPJ</label>
                         <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true" data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$" data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
                     </div>
-                    <div class="form__block grid grid__xl--2">
+                    <div class="form__block grid xl_4 lg_4 md_6 sm_12 xs_12">
                         <label for="Email" class="form__block__label">E-Mail</label>
                         <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido" data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
                     </div>
-                    <div class="form__block grid grid__xl--2">
+                    <div class="form__block grid xl_4 lg_4 md_12 sm_12 xs_12">
                         <div class="g-recaptcha" data-sitekey="6LcA0msUAAAAAB5_ocKQ9f3wpuEg8vHBHOazuUM_"></div>
                     </div>
                 </div>
-                <button class="form__confirm">Validar</button>
+                <button type="submit" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="changeForm('register')">Validar</button>
+            </form>
+        </main>
+
+        <main class="form register">
+            <h1 class="title">Dados Gerais</h1>
+            <form>
+                <div class="form__group">
+                    <div class="form__block grid xl_4 lg_4 md_6 sm_12 xs_12">
+                        <label for="CNPJ" class="form__block__label">CNPJ</label>
+                        <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true" data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$" data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
+                    </div>
+                    <div class="form__block grid xl_4 lg_4 md_6 sm_12 xs_12">
+                        <label for="Email" class="form__block__label">E-Mail</label>
+                        <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido" data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
+                    </div>
+                    <div class="form__block grid xl_4 lg_4 md_12 sm_12 xs_12">
+                        <div class="g-recaptcha" data-sitekey="6LcA0msUAAAAAB5_ocKQ9f3wpuEg8vHBHOazuUM_"></div>
+                    </div>
+                </div>
+                <button type="submit" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="changeForm('layout')">Validar</button>
             </form>
         </main>
 
     </div>
    
-    
+    <script src="./dist/js/app.js"></script>
 </body>
 </html>

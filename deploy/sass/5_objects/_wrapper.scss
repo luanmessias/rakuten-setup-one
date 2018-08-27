@@ -1,14 +1,25 @@
 .wrapper {
+  
   @extend %box-sizing;
   @include transition;
+  padding: 0px 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+
   @include m('main') {
     @include flexbox(wrap, space-between, flex-start, flex-start, flex-start);
   }
-  margin: 0 auto;
-  width: 100%;
-  @media #{$res-xl} {
-    max-width: 1000px;
+  
+  &.first > .first,
+  &.register > .register,
+  &.layout > .layout,
+  &.domain > .domain,
+  &.bank > .bank,
+  &.payment > .payment{
+    display: block;
   }
+
 }
 
 .row {
@@ -43,21 +54,3 @@
     }
 }
 
-.aside{
-    @include transition;
-    @media #{$res-xs} {
-      width: 100%;
-    }
-    @media #{$res-sm} {
-      width: 100%;
-    }
-    @media #{$res-md} {
-        width: calc(30% - 10px);
-    }
-    @media #{$res-lg} {
-        width: calc(30% - 10px);
-    }
-    @media #{$res-xl} {
-        width: calc(30% - 10px);
-    }
-}

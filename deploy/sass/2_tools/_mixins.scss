@@ -357,12 +357,13 @@ $y) {
 @mixin createGrid($prefix, $mediaquery) {
 
   @media #{$mediaquery} {
-    @for $i from 1 through 12 {
-        @include e("#{$prefix}--#{$i}") {
-            $part: round(100 / 12);
-            width: calc(100% / #{$i});
-        }
-    }
+      @for $i from 1 through 12 {
+          .#{$prefix}_#{$i} {
+              $calc: (100% / 12);
+              $result: $i * $calc;
+              width: #{$result};
+          }
+      }
   }
-  
+
 }

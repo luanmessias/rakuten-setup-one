@@ -1,9 +1,7 @@
 .header{
     width: 100%;
     background-color: #FFF;
-    @extend .animated;
-    @extend .fadeInDown;
-   
+    @include animate(fadeInDown, 0);
 
     @media #{$res-sm-xl} {
         height: 77px;
@@ -17,6 +15,11 @@
         @include flexbox(row, wrap, flex-start, center, center);
         @include m('last'){
             @include flexbox(row, wrap, flex-end, center, center);
+        }
+
+        @media #{$res-xs-sm} {
+            @include flexbox(row, wrap, center, center, center);
+            padding: 15px 0px;
         }
     }
 

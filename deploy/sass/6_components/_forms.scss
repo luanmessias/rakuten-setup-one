@@ -5,13 +5,17 @@
     padding: 25px;
     width: 100%;
     height: auto;
+    margin-bottom: 25px;
+    display: none;
 
     @include e('group'){
         @include flexbox(row, wrap, space-between, flex-end, center);
+        @include transition;
         padding: 20px 0px;
     }
 
     @include e('block'){
+
         @include e('label'){
             @include fonte($second-font, bold, 14px, #212129);
             display: block;
@@ -27,5 +31,7 @@
             background-color: #f1f2f2;
             border: 0px;
         }
-    }
+
+    } 
+
 }

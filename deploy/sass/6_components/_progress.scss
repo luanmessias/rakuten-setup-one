@@ -1,5 +1,6 @@
 .progress{
     @include flexbox(row, nowrap, space-between, center, center);
+    @include box-sizing;
     padding: 20px 0px;
     @include e('item'){
         @include flexbox(column, nowrap, space-between, center, center);
@@ -15,6 +16,7 @@
 
         @include e('text'){
             @include fonte($second-font, bold, 14px, #3e3e3e);
+            text-align: center;
         }
 
 
@@ -92,6 +94,7 @@
     }
     @include e('line'){
         @include animate(fadeIn, 1.4s);
+        @include transition;
         list-style: none;
         width: calc(100% / 7);
         height: 1px;
@@ -100,5 +103,10 @@
             background-color: #089b00;
             height: 2px;
         }
+
+        @media #{$res-xs-sm}{
+            visibility: hidden;
+        }
+
     }
 }
