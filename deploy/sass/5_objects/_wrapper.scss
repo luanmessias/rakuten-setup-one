@@ -8,7 +8,7 @@
   max-width: 1100px;
 
   @include m('main') {
-    @include flexbox(wrap, space-between, flex-start, flex-start, flex-start);
+    
   }
   
   &.first > .first,

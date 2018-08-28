@@ -32,6 +32,13 @@
             border: 0px;
         }
 
+        @include e('line'){
+            width: 100%;
+            height: 1px;
+            background-color: #535353;
+            margin: 10px 0px;
+        }
+
     } 
 
 }
