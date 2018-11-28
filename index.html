@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="dist/css/main.css">
     <script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
 </head>
+
 <body>
 
     <header class="header">
@@ -20,7 +22,7 @@
                     </a>
                 </div>
                 <div class="header__description">
-                    <span class="header__description__text">Loja Virtual</span>
+                    <span class="header__description__text" onclick="activeModal('fields')">Loja Virtual</span>
                 </div>
             </div>
 
@@ -37,8 +39,8 @@
 
         </div>
     </header>
-    
-    <div class="wrapper wrapper--main first" >
+
+    <div class="wrapper wrapper--main first">
 
         <ul class="progress">
             <li class="progress__item progress__item--register active">
@@ -73,11 +75,14 @@
                 <div class="form__group">
                     <div class="form__block grid xl_4 lg_4 md_6 sm_12 xs_12">
                         <label for="CNPJ" class="form__block__label">CNPJ</label>
-                        <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true" data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$" data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
+                        <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true"
+                            data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$"
+                            data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
                     </div>
                     <div class="form__block grid xl_4 lg_4 md_6 sm_12 xs_12">
                         <label for="Email" class="form__block__label">E-Mail</label>
-                        <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido" data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
+                        <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido"
+                            data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
                     </div>
                     <div class="form__block grid xl_4 lg_4 md_12 sm_12 xs_12">
                         <div class="g-recaptcha" data-sitekey="6LcA0msUAAAAAB5_ocKQ9f3wpuEg8vHBHOazuUM_"></div>
@@ -93,11 +98,14 @@
                 <div class="form__group">
                     <div class="form__block grid xl_6 lg_6 md_6 sm_12 xs_12">
                         <label for="CNPJ" class="form__block__label">CNPJ</label>
-                        <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true" data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$" data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
+                        <input class="form__block__control" data-inputmask="'mask' : '99.999.999/9999-99'" data-val="true"
+                            data-val-regex="CNPJ inválido" data-val-regex-pattern="^\d{2}[.]?\d{3}[.]?\d{3}[/]?\d{4}[-]?\d{2}$"
+                            data-val-required="O CNPJ é obrigatório" id="CNPJ" name="CNPJ" type="text" value="">
                     </div>
                     <div class="form__block grid xl_6 lg_6 md_6 sm_12 xs_12">
                         <label for="Email" class="form__block__label">E-Mail</label>
-                        <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido" data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
+                        <input class="form__block__control" data-val="true" data-val-email="E-Mail inválido"
+                            data-val-required="O campo E-Mail é obrigatório" id="Email" name="Email" type="text" value="">
                     </div>
 
                     <div class="form__block grid xl_12 lg_12 md_12 sm_12 xs_12">
@@ -151,21 +159,117 @@
                     </div>
 
                 </div>
-                <button type="submit" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="checkFields()">Prosseguir</button>
+                <button type="submit" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="changeForm()">Prosseguir</button>
             </form>
+        </main>
+
+
+        <main class="form layout">
+            <h1 class="title">Escolha seu layout</h1>
+
+            <form>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+                <div class="layout__item grid xl_2 lg_3 md_4 sm_4 xs_6">
+                    <input class="layout__item__radio" type="radio" name="optlayout">
+                    <span class="layout__item__name">Layout 1</span>
+                    <div class="layout__item__cont" onclick="activeModal('layout')">
+                        <img  class="layout__item__img"   src="dist/img/layout.jpg" alt="">
+                    </div>
+                </div>
+            </form>
+
         </main>
 
     </div>
 
 
 
-    <div class="is-hidden modal-overlay">
-    <div class="modal">
-        <span class="button-close">×</span>
-        <img src='https://i.imgur.com/Qnkww5n.jpg' width="95%">
+    <div class="modalover modalover--hidden">
+
+        <div class="modal modal--fields">
+            <div class="modal__title">
+                <i class="modal__title__ico far fa-times-circle"></i>
+                <h2 class="modal__title__txt">Verifique os campos abaixo</h2>
+            </div>
+
+            <ul class="modal__list">
+                <li class="modal__list__item">Nome inválido</li>
+                <li class="modal__list__item">DDD inválido</li>
+                <li class="modal__list__item">Telefone inválido</li>
+            </ul>
+            
+            <a href="#" class="button modal__close xl_4 lg_4 md_4 sm_12 xs_12">OK</a>
+        </div>
+
+        <div class="modal modal--layout">
+            <img src="dist/img/layout.jpg" alt="">
+        </div>
+
     </div>
-    </div>
-   
+
     <script src="./dist/js/app.js"></script>
 </body>
+
 </html>

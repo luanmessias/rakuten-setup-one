@@ -57,7 +57,7 @@ const changeForm = () => {
 class Modal {
     constructor(overlay) {
         this.overlay = overlay
-        const closeButton = overlay.querySelector('.button-close')
+        const closeButton = document.querySelector('.modal__close')
         closeButton.addEventListener('click', this.close.bind(this))
         overlay.addEventListener('click', e => {
             if (e.srcElement.id === this.overlay.id) {
@@ -66,22 +66,35 @@ class Modal {
         })
     }
     open() {
-        this.overlay.classList.remove('is-hidden')
+        this.overlay.classList.add('modalover--show');
+        this.overlay.classList.remove('modalover--hidden');
     }
 
     close() {
-        this.overlay.classList.add('is-hidden')
+        this.overlay.classList.add('modalover--hidden');
+        this.overlay.classList.remove('modalover--show');
     }
 }
-const modal = new Modal(document.querySelector('.modal-overlay'))
+const modal = new Modal(document.querySelector('.modalover'))
 window.openModal = modal.open.bind(modal)
-//window.openModal()
 
+const activeModal = (container) => {
+    let closeModal = document.querySelectorAll('.modal');
+    let openModal = document.querySelector(`.modal--${container}`); 
+
+    for (var i = 0; i < closeModal.length; i++) {
+        closeModal[i].classList.remove('active');
+    }
+
+    openModal.classList.add('active');
+    window.openModal();
+}
 
 const checkFields = () => {
     event.preventDefault()
     let fields = document.querySelectorAll('.register > form input')
     let emptyFields = []
+    console.log(fields);
     for (var index = 0; index < fields.length; index++) {
         
     }

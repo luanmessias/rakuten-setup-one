@@ -1,9 +1,4 @@
-  
-  .is-hidden {
-    display: none;
-  }
-  
-  .button-close {
+.button-close {
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -11,27 +6,81 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
-  }
-  
-  .modal-overlay {
+}
+
+.modalover {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 9999
-  }
-  
-  .modal {
-    padding: 20px 30px;
-    width: 90%;
-    max-height: calc(100% - 150px);
-    overflow-y: scroll;
-    position: relative;
-    min-height: 300px;
-    margin: 5% auto 0;
+    z-index: 9999;
+
+    @include m("hidden") {
+        display: none;
+    }
+
+
+    @include m("show") {
+        @include flexbox(row, nowrap, center, center, center);
+        @include animate(fadeIn, 0s);
+    }
+}
+
+.modal {
+    display: none;
+    width: auto;
+    height: auto;
+    //margin: 5% auto 0;
     background: #fff;
     z-index: 9999;
-  }
-  
+    &.active{
+        display: block;
+        @include animate(fadeInDown, 0s);
+    }
+
+    @include m('fields'){
+        padding: 30px;
+    }
+
+    @include e("title") {
+        @include flexbox(column, nowrap, center, center, center);
+        width: 100%;
+
+        @include e("ico") {
+            font-size: 60px;
+            color: $color-red;
+        }
+
+
+        @include e("txt") {
+            @include fonte($second-font, 400, 20px, $color-red);
+
+            margin-top: 5px;
+        }
+    }
+
+
+    @include e("list") {
+        @include box-sizing;
+
+        width: auto;
+        margin: 0px 0px 20px 0px;
+        padding: 0px;
+        list-style: none;
+        width: 100%;
+
+        @include e("item") {
+            @include box-sizing;
+
+            width: 100%;
+            padding: 10px;
+            border-top: 1px solid $color-gray-light;
+
+            &:last-of-type {
+                border-bottom: 1px solid $color-gray-light;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.layout{
+
+    > form{
+        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+        padding: 20px 0px;
+    }
+
+    @include e('item'){
+        @include box-sizing;
+        padding: 5px;
+        border: 5px solid transparent;
+        text-align: center;
+        position: relative;
+
+        @include e('radio'){
+            visibility: hidden;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            &:before{
+                @include set-icon($fa-var-circle, 15px, 400, #000);
+                visibility: visible;
+            }
+
+            &:checked:before{
+                @include set-icon($fa-var-dot-circle, 15px, 400, $color-red);
+                visibility: visible;
+            }
+        }
+
+        @include e('cont'){
+            &:hover:before{
+                @include flexbox(row, wrap, center, center, center);
+                @include set-icon($fa-var-search, 35px, 900, #FFF);
+                @include animate(fadeIn, 0s);
+                cursor: pointer;
+                position: absolute;
+                bottom: 8px;
+                left: 5px;
+                width: calc(100% - 10px);
+                height: calc(100% - 35px);
+                background-color: rgba(255, 0, 0, 0.7);
+            }                        
+        }
+
+        @include e('img'){
+            @include box-sizing;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+    }
+}
