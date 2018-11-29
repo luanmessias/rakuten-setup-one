@@ -1,5 +1,4 @@
 const changeForm = () => {
-    event.preventDefault()
 
     let antForm = 'first'
     let nextForm = 'first'

@@ -16,10 +16,18 @@
 
     @include e('block'){
 
+        @include e('radio'){
+            @include flexbox(row, wrap, flex-start, center, center);
+        }
+
         @include e('label'){
             @include fonte($second-font, bold, 14px, #212129);
             display: block;
             margin-bottom: 5px;
+            @include m('radio'){
+                margin-left: 5px;
+                margin-bottom: 0px;
+            }
         }
     
         @include e('control'){
@@ -27,9 +35,12 @@
             @include box-shadow(1px, 1px, 1px, #c1c2c2, inset);
             @include border-radius(2px);
             width: 100%;
-            padding: 10px 15px;
+            padding: 15px;
             background-color: #f1f2f2;
             border: 0px;
+            @include m('radio'){
+                margin-top: 10px;
+            }
         }
 
         @include e('line'){

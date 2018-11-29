@@ -1,0 +1,14 @@
+.domain{
+    > form{
+        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+    }
+
+    @include e('info'){
+        margin-top: 10px;
+        padding: 10px;
+        background-color: $color-gray-extra-light;
+        &:before{
+            @include set-icon($fa-var-info, 25px, 900, $color-gray-dark);
+        }
+    }
+}
