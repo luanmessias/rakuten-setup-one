@@ -23,6 +23,11 @@ const changeForm = () => {
             nextForm = 'domain'
             break
         }
+        case "domain": {
+            antForm = 'layout'
+            nextForm = 'bank'
+            break
+        }
         case "bank": {
             antForm = 'layout'
             nextForm = 'payment'

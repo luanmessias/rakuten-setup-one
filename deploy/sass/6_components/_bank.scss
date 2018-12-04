@@ -1,0 +1,25 @@
+.bank{
+    > form{
+        @include flexbox(row, wrap, flex-start, flex-end, flex-start);
+    }
+
+    @include e('info'){
+        @include flexbox(row, nowrap, flex-start, center, center);
+        @include box-sizing;
+        margin-top: 10px;
+        padding: 10px;
+        width: 100%;
+        @include fonte($second-font, 400, 12px, #7a7a7a);
+        a{
+            @include fonte($second-font, 400, 12px, #7a7a7a); 
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+        &:before{
+            @include set-icon($fa-var-info-circle, 25px, 900, $color-gray-dark);
+            margin-right: 15px;
+        }
+
+    }
+
+}

@@ -4,11 +4,115 @@
     }
 
     @include e('info'){
+        @include flexbox(row, wrap, flex-start, center, center);
+        @include box-sizing;
         margin-top: 10px;
         padding: 10px;
         background-color: $color-gray-extra-light;
+        width: 100%;
+        @include fonte($second-font, 400, 12px, #7a7a7a);
+        a{
+            @include fonte($second-font, 400, 12px, #7a7a7a); 
+            text-decoration: underline;
+            margin-left: 5px;
+        }
         &:before{
-            @include set-icon($fa-var-info, 25px, 900, $color-gray-dark);
+            @include set-icon($fa-var-info-circle, 25px, 900, $color-gray-dark);
+            margin-right: 15px;
         }
     }
+
+    .cert{
+        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+        width: 100%;
+
+        @include e('title'){
+            @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+            width: 100%;
+
+            &:before{
+                content: "";
+                display: block;
+                background-image: url(../../dist/img/cert.png);
+                width: 50px;
+                height: 50px;
+                background-repeat: no-repeat;
+                margin-right: 15px;
+            }
+
+            @include e('cont'){
+                @include flexbox(column, nowrap, space-between, flex-start, flex-start);
+                width: calc(100% - 65px);
+                height: 50px;
+
+                &:after{
+                    content: "";
+                    width: 100%;
+                    border-bottom: 1px solid #7a7a7a;
+                }
+
+            }
+
+            @include e('txt'){
+                @include fonte($second-font, bold, 14px, #2e2e2e);
+            }
+
+            @include e('info'){
+                @include fonte($second-font, 400, 12px, #7a7a7a);
+            }
+
+        }
+
+        @include e('cont'){
+            @include flexbox(row, wrap, space-between, flex-start, flex-start);
+            padding-left: 65px;
+            margin-top: 15px;
+            width: 100%;
+
+            @media #{$res-xs-sm}{
+                padding-left: 0px;
+            }
+            
+            @include e('radio'){
+                margin-right: 10px;
+            }
+
+            @include e('desc'){
+                @include fonte($second-font, bold, 14px, #2e2e2e);
+            }
+
+            @include e('sep'){
+                width: 1px;
+                height: 15px;
+                background-color: #7a7a7a;
+                margin: 0px 5px;
+                @media #{$res-xs-sm}{
+                    display: none;
+                }
+            }
+
+            @include e('txt'){
+                @include fonte($second-font, 400, 14px, #7a7a7a); 
+            }
+
+
+
+            
+        }
+
+        @include e('opt'){
+            width: 50%;
+            @include flexbox(row, wrap, flex-start, center, center);
+
+            @media #{$res-xs-sm}{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        
+
+    }
+
 }

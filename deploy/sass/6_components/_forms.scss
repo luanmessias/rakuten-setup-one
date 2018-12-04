@@ -16,6 +16,11 @@
 
     @include e('block'){
 
+
+        @include m('multi'){
+            @include flexbox(row, wrap, space-between, flex-end, center);
+        }
+
         @include e('radio'){
             @include flexbox(row, wrap, flex-start, center, center);
         }
@@ -24,9 +29,11 @@
             @include fonte($second-font, bold, 14px, #212129);
             display: block;
             margin-bottom: 5px;
+            width: 100%;
             @include m('radio'){
                 margin-left: 5px;
                 margin-bottom: 0px;
+                width: auto;
             }
         }
     
@@ -35,11 +42,15 @@
             @include box-shadow(1px, 1px, 1px, #c1c2c2, inset);
             @include border-radius(2px);
             width: 100%;
-            padding: 15px;
+            padding: 10px;
+            height: 50px;
             background-color: #f1f2f2;
             border: 0px;
             @include m('radio'){
                 margin-top: 10px;
+            }
+            @include m('multi'){
+                width: calc(50% - 10px);
             }
         }
 
@@ -48,6 +59,15 @@
             height: 1px;
             background-color: #535353;
             margin: 10px 0px;
+        }
+
+        &.error{
+            input[type='text']{
+                border: 2px solid $color-red;
+                &::placeholder{
+                    color: $color-red;
+                }
+            }
         }
 
     } 

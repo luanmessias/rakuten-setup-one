@@ -249,23 +249,181 @@
         <main class="form domain">
             <h1 class="title">Domínio</h1>
             <form>
-                <div class="form__block__radio grid xl_5 lg_6 md_6 sm_6 xs_12">
+                <div class="form__block__radio grid xl_4 lg_6 md_6 sm_6 xs_12">
                     <input class="form__block__radio" type="radio" name="dominio" value="">
                     <label for="dominio" class="form__block__label form__block__label--radio">Razão Social</label>
                     <input class="form__block__control form__block__control--radio" type="text" name="Inscrição Estadual"
                         placeholder="Informe aqui seu domínio">
                 </div>
-                <div class="form__block__radio grid xl_7 lg_6 md_6 sm_6 xs_12">
+                <div class="form__block__radio grid xl_8 lg_6 md_6 sm_6 xs_12">
                     <input class="form__block__radio" type="radio" name="dominio" value="">
-                    <label for="dominio" class="form__block__label form__block__label--radio">Razão Social</label>
+                    <label for="dominio" class="form__block__label form__block__label--radio">Não possuo um domínio</label>
                     <div class="domain__info">
-                        Você precisa de um domínio para configurar sua loja, Adquira um domínio em <a target="_blank" href="www.registro.br">www.registro.br</a>
+                        Você precisa de um domínio para configurar sua loja, Adquira um domínio em
+                        <a target="_blank" href="http://www.registro.br">www.registro.br</a>
                     </div>
                 </div>
                 <div class="form__block grid xl_12 lg_12 md_12 sm_12 xs_12">
-                    asdasda
+                    <div class="cert">
+                        <div class="cert__title">
+                            <div class="cert__title__cont">
+                                <span class="cert__title__txt">Certificado de segurança</span>
+                                <span class="cert__title__info">Você já possui um certificado de segurança para o seu
+                                    domínio?</span>
+                            </div>
+                        </div>
+                        <div class="cert__cont">
+                            <div class="cert__opt">
+                                <input class="cert__cont__radio" type="radio" name="cert" value="">
+                                <span class="cert__cont__desc">
+                                    Sim
+                                </span>
+                                <div class="cert__cont__sep"></div>
+                                <span class="cert__cont__txt">Será nescessário o envio do certificado de segurança</span>
+                            </div>
+                            <div class="cert__opt">
+                                <input class="cert__cont__radio" type="radio" name="cert" value="">
+                                <span class="cert__cont__desc">
+                                    Não
+                                </span>
+                                <div class="cert__cont__sep"></div>
+                                <span class="cert__cont__txt">Será nescessário adquirir um certificado digital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid xl_12 lg_12 md_12 sm_12 xs_12">
+                    <button type="button" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="changeForm()">Prosseguir</button>
                 </div>
             </form>
+        </main>
+
+        <main class="form bank">
+            <h1 class="title">Dados bancários</h1>
+            <form>
+                <div class="form__block grid xl_4 lg_4 md_4 sm_6 xs_12">
+                    <label for="banco" class="form__block__label">Banco*</label>
+                    <select class="form__block__control" name="banco" id="">
+                        <option value="">Itaú Unibanco S.A</option>
+                        <option value="">Bradesco</option>
+                        <option value="">Caixa</option>
+                        <option value="">Banco do Brasil</option>
+                    </select>
+                </div>
+                <div class="form__block error grid xl_4 lg_4 md_4 sm_6 xs_12">
+                    <label for="banco" class="form__block__label">Agência*</label>
+                    <input class="form__block__control" type="text" value="" placeholder="Test ">
+                </div>
+                <div class="form__block grid xl_3 lg_3 md_3 sm_10 xs_8">
+                    <label for="banco" class="form__block__label">Conta*</label>
+                    <input class="form__block__control" type="text" value="">
+                </div>
+                <div class="form__block grid xl_1 lg_1 md_1 sm_2 xs_4">
+                    <label for="banco" class="form__block__label"></label>
+                    <input class="form__block__control" type="text" value="">
+                </div>
+            </form>
+            <div class="bank__info grid xl_12 lg_12 md_12 sm_12 xs_12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper dapibus urna, eu eleifend
+                massa blandit sed. Quisque dapibus libero elit. Mauris sit amet lobortis ipsum massa. Aliquam rhoncus
+                risus vel justo ultrices viverra. Vestibulum consequat elementum ultrices.
+            </div>
+            <div class="grid xl_12 lg_12 md_12 sm_12 xs_12">
+                <button type="button" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="changeForm()">Prosseguir</button>
+            </div>
+        </main>
+
+
+        <main class="form payment">
+            <h1 class="title">Pagamento</h1>
+
+            <div class="resume grid xl_12 lg_12 md_12 sm_12 xs_12">
+                <span class="resume__title">Resumo da aquisição</span>
+                <table class="resume__tab">
+                    <thead>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </thead>
+                    <tbody>
+                        <td>Rakuten One</td>
+                        <td>1</td>
+                        <td>R$99,00</td>
+                    </tbody>
+                    <tfoot>
+                        <td colspan="2">Total</td>
+                        <td>R$99,00</td>
+                    </tfoot>
+                </table>
+                <div class="resume__info">
+                    <span class="resume__info__title">Mensalidade</span>
+                    <span class="resume__info__txt">R$ 99,00 cobrado todo dia 10, a partir do próximo mês.</span>
+                </div>
+            </div>
+
+            <form>
+                <div class="payment__title">
+                    <div class="payment__title__txt">Pagamento do contrato Rakuten One</div>
+                    <div class="payment__title__info">Autorizo que seja debitado em meu cartão de crédito na forma de
+                        pagamento indicada abaixo, os valores à presente contratação.</div>
+                </div>
+
+                <div class="form__block grid xl_4 lg_4 md_4 sm_6 xs_12">
+                    <label for="banco" class="form__block__label">Número do cartão*</label>
+                    <input class="form__block__control" type="text" value="">
+                </div>
+
+                <div class="form__block grid xl_4 lg_4 md_4 sm_6 xs_12">
+                    <label for="banco" class="form__block__label">Nome do titular*</label>
+                    <input class="form__block__control" type="text" value="">
+                </div>
+
+                <div class="payment__cards form__block grid xl_4 lg_4 md_4 sm_6 xs_12">
+                    <ul class="payment__cards__cont">
+                        <li class="payment__card payment__card--visa"></li>
+                        <li class="payment__card payment__card--master"></li>
+                        <li class="payment__card payment__card--elo"></li>
+                        <li class="payment__card payment__card--amex"></li>
+                        <li class="payment__card payment__card--dinners"></li>
+                    </ul>
+                </div>
+
+
+                <div class="form__block form__block--multi grid xl_4 lg_4 md_4 sm_6 xs_12">
+                    <label for="banco" class="form__block__label">Validade (mm/aa)*</label>
+                    <input class="form__block__control form__block__control--multi" type="text" value="">
+                    <input class="form__block__control form__block__control--multi" type="text" value="">
+                </div>
+
+                <div class="form__block grid xl_2 lg_4 md_4 sm_6 xs_12">
+                    <label for="banco" class="form__block__label">Cód. de Segurança*</label>
+                    <input class="form__block__control form__block__control" type="text" value="">
+                </div>
+
+                <div class="payment__info grid xl_6 lg_12 md_12 sm_12 xs_12">
+                    <span>Ao clicar em “finalizar” você está concordando com os termos apresentados no contrato, para visualizar <a href="#">clique aqui</a></span>
+                </div>
+
+
+            </form>
+
+            <div class="grid xl_12 lg_12 md_12 sm_12 xs_12">
+                <button type="button" class="button form__confirm xl_4 lg_4 md_4 sm_12 xs_12" onclick="changeForm()">Prosseguir</button>
+            </div>
+
+
+            <div class="payment__docs grid xl_12 lg_12 md_12 sm_12 xs_12">
+                <div class="payment__docs__title">
+                    Lista de documentos
+                </div>
+                <div class="payment__docs__info">1. Contrato Social devidamente arquivado na Junta Comercial, com última alteração se houver, ou última atualização consolidada.</div>
+                <div class="payment__docs__info">2. RG/CPF (do representante legal - responsável pela assinatura do contrato)</div>
+                <div class="payment__docs__info">3. Comprovante Brancário - Cabeçalho do extrato ou Folha de Cheque constando claramente o CNPJ da empresa. Não será aceito cópia de cartão</div>
+                <br><br>
+                <div class="payment__docs__obs">Obs.</div>
+                <div class="payment__docs__info">- O cadastramento da loja no sistema ficará condicionado a análise da documentação encaminhada pela contratante.</div>
+                <div class="payment__docs__info">- Alguns produtos da loja contratante poderão não ser listados no canal de divulgação da Rakuten, ficando sua aprovação a critério exclusivo da Rakuten.</div>
+            </div>
         </main>
 
     </div>

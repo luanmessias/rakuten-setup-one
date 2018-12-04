@@ -1,0 +1,184 @@
+.payment {
+    > form {
+        @include flexbox(row, wrap, flex-start, inherit, flex-start);
+    }
+
+    .resume {
+        @include box-sizing;
+
+        margin-top: 20px;
+        padding: 20px;
+        background-color: $color-gray-extra-light;
+
+        @include e("title") {
+            @include fonte($second-font, bold, 18px, #2e2e2e);
+
+            margin-bottom: 10px;
+            display: block;
+        }
+
+
+        table {
+            @include box-sizing;
+
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 1px solid $color-gray-light;
+            border-bottom: 1px solid $color-gray-light;
+
+            td, th {
+                border-top: 1px solid $color-gray-light;
+                border-bottom: 1px solid $color-gray-light;
+                padding: 10px;
+            }
+
+            thead, tbody {
+                th, td {
+                    text-align: right;
+                }
+
+                th:first-child,
+                td:first-child {
+                    text-align: left;
+                }
+            }
+
+            tfoot {
+                td {
+                    text-align: right;
+                }
+            }
+        }
+
+        @include e("info") {
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include box-sizing;
+            width: 100%;
+
+            span {
+                a {
+                    @include fonte($second-font, 400, 12px, #7a7a7a);
+                    text-decoration: underline;
+                    margin-left: 5px;
+                }
+            }
+
+            @include e('title'){
+                @include fonte($second-font, bold, 14px, #7a7a7a);
+                display: block;  
+                width: 100%;      
+            }
+
+            @include e('txt'){
+                @include fonte($second-font, 400, 12px, #7a7a7a);
+                display: block;        
+            }
+
+    
+            &:before {
+                @include set-icon($fa-var-info-circle, 25px, 900, $color-gray-dark);
+    
+                margin-right: 15px;
+            }
+        }
+
+    }
+
+    @include e("title") {
+        width: 100%;
+        border-bottom: 1px solid $color-gray-light;
+        margin: 20px 0px;
+
+        @include e("txt") {
+            @include fonte($second-font, bold, 14px, #2e2e2e);
+        }
+
+
+        @include e("info") {
+            @include fonte($second-font, normal, 12px, #2e2e2e);
+
+            margin: 5px 0px;
+        }
+    }
+
+
+    @include e("cards") {
+        @include flexbox(row, nowrap, flex-start, center, center);
+        @include e("cont") {
+            @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+
+            list-style: none;
+            margin: 0;
+            padding: 0px;
+        }
+    }
+
+
+    @include e("card") {
+        background-image: url("../../dist/img/cards.jpg");
+        width: 42px;
+        height: 27px;
+        margin-right: 10px;
+
+        @include m("master") {
+            background-position: -59px 0px;
+        }
+
+
+        @include m("elo") {
+            background-position: -107px 0px;
+        }
+
+
+        @include m("amex") {
+            background-position: -152px 0px;
+        }
+
+
+        @include m("dinners") {
+            background-position: -195px 0px;
+        }
+    }
+
+
+    @include e("info") {
+        @include flexbox(row, nowrap, flex-start, center, center);
+        @include box-sizing;
+
+        span {
+            @include fonte($second-font, 400, 12px, #7a7a7a);
+
+            a {
+                @include fonte($second-font, 400, 12px, #7a7a7a);
+
+                text-decoration: underline;
+                margin-left: 5px;
+            }
+        }
+
+        &:before {
+            @include set-icon($fa-var-info-circle, 25px, 900, $color-gray-dark);
+
+            margin-right: 15px;
+        }
+    }
+
+
+    @include e('docs'){
+        @include e('title'){
+            @include fonte($second-font, bold, 18px,  $color-gray-dark);
+            width: 100%;
+            border-bottom: 1px solid $color-gray-light;
+            margin: 20px 0px;
+            padding-bottom: 5px;
+        }
+        @include e('info'){
+            @include fonte($second-font, 400, 14px, #7a7a7a);
+            margin: 3px 0px;
+        }
+        @include e('obs'){
+            @include fonte($second-font, bold, 14px, #7a7a7a);
+        }
+    }
+
+}
