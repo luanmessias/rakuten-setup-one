@@ -38,6 +38,10 @@
             height: 35px;
             background-color: #CCC;
             margin: 0px 25px;
+
+            @media #{$res-xs-sm} {
+                display: none;
+            }
         }
 
     }
