@@ -17,6 +17,9 @@
         @include e('text'){
             @include fonte($second-font, bold, 14px, #3e3e3e);
             text-align: center;
+            @media #{$res-xs-sm}{
+                display: none;
+            }
         }
 
 
